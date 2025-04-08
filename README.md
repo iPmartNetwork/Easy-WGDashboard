@@ -19,8 +19,47 @@ This script automates the installation and configuration of a WireGuard VPN serv
 
 ### Usage
 
-1. **Download the Script**: Clone the repository or download the script file.
+ **Download the Script**: Clone the repository or download the script file.
 
 ```
  apt update && apt install git -y && git clone https://github.com/iPmartNetwork/Easy-WGDashboard && cd Easy-WGDashboard && chmod +x install.sh && ./install.sh 
  ```
+**Follow the Prompts**: The script will guide you through several prompts to set up the configuration, such as:
+   - Hostname
+   - Dashboard username and password
+   - DNS and port configurations
+   - IPv4/IPv6 preferences
+
+### Script Highlights
+
+- **Interface Detection**: Automatically detects the default network interface for configuration.
+- **IP Range Selection**: Allows users to select IP ranges for private networks or specify custom ranges.
+- **Service and Firewall Setup**: Configures UFW rules and sets up WireGuard to start at boot.
+- **Monitoring**: Sets up monitoring scripts to detect changes in WireGuard configuration, applying changes as needed.
+- **WGDashboard Installation**: Downloads and installs WGDashboard, a web-based management tool, for easy configuration of WireGuard peers and settings.
+- **Crontab Monitoring**: Adds cron jobs to monitor the WireGuard configuration and ensure consistent service.
+
+### Post-Installation
+
+After installation, you can access the WGDashboard interface using the provided IP and port. The dashboard provides management capabilities for WireGuard, including creating and managing peers.
+
+1. **Access Dashboard**: 
+   - **URL**: `http://<server_ip>:<dashboard_port>`
+   - **Username**: The username provided during installation
+   - **Password**: The password specified during installation
+
+2. **Reboot**: The system will automatically reboot after successful installation. You can begin creating WireGuard peers once it’s back up.
+
+### Troubleshooting
+
+- **Failed Services**: If services fail to start, the script provides feedback on the status. Check `systemctl` logs for more details.
+- **Firewall Rules**: The script attempts to configure UFW automatically, but ensure your network allows the necessary ports.
+- **Re-run Installation**: If you encounter issues, consider re-running the script as root to ensure permissions are not a problem.
+
+
+### Special thanks donaldzou
+
+
+### License
+
+This project is licensed under the MIT License.
