@@ -230,7 +230,7 @@ generate_ipv4() {
             ipv4_address_pvt="172.$((RANDOM%16+16)).$((RANDOM%256)).1/24"
             ;;
         3)
-            ipv4_address_pvt="192.168.$((RANDOM%256)).1/24"
+            ipv4_address_pvt="110.20.0.1/24"
             ;;
         4)
             read -p "Enter custom Private IPv4 address: " ipv4_address_pvt
