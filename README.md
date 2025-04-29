@@ -22,7 +22,8 @@ This script automates the installation and configuration of a WireGuard VPN serv
  **Download the Script**: Clone the repository or download the script file.
 
 ```
- apt update && apt install git -y && git clone https://github.com/iPmartNetwork/Easy-WGDashboard && cd Easy-WGDashboard && chmod +x install.sh && ./install.sh 
+ apt update && apt install git -y && git clone https://github.com/iPmartNetwork/Easy-WGDashboard && cd Easy-WGDashboard && chmod +x install.sh && ./install.sh
+
  ```
 **Follow the Prompts**: The script will guide you through several prompts to set up the configuration, such as:
    - Hostname
